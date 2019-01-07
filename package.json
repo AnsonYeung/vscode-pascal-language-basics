@@ -1,0 +1,25 @@
+{
+    "name": "pascal-language-basics",
+    "displayName": "Pascal Language Basics",
+    "description": "Provides basic functionality in pascal language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "pascal",
+            "aliases": ["Pascal", "pascal"],
+            "extensions": [".pas",".pp"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "pascal",
+            "scopeName": "source.pascal",
+            "path": "./syntaxes/pascal.tmLanguage.json"
+        }]
+    }
+}
