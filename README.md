@@ -1,2 +1,2 @@
-# vscode-pascal-language-basics
-Pascal Language Basics Extension
+# Pascal Language Basics
+This is a project for pascal language support in Visual Studio Code.
