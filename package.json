@@ -3,6 +3,9 @@
     "displayName": "Pascal Language Basics",
     "description": "Provides basic functionality in pascal language",
     "version": "0.0.1",
+    "publisher": "AnsonYeung",
+    "license": "MIT",
+    "repository": "github:AnsonYeung/vscode-pascal-language-basics",
     "engines": {
         "vscode": "^1.30.0"
     },
