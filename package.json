@@ -1,11 +1,11 @@
 {
     "name": "pascal-language-basics",
     "displayName": "Pascal Language Basics",
-    "description": "Provides basic functionality in pascal language",
+    "description": "Provides syntax highlighting in pascal language",
     "version": "0.0.1",
     "publisher": "AnsonYeung",
     "license": "MIT",
-    "repository": "github:AnsonYeung/vscode-pascal-language-basics",
+    "repository": "https://github.com/AnsonYeung/vscode-pascal-language-basics",
     "engines": {
         "vscode": "^1.30.0"
     },
@@ -22,7 +22,10 @@
         "grammars": [{
             "language": "pascal",
             "scopeName": "source.pascal",
-            "path": "./syntaxes/pascal.tmLanguage.json"
+            "path": "./syntaxes/pascal.tmLanguage.json",
+            "embeddedLanguages": {
+                "meta.embedded.asm": "source.asm"
+            }
         }]
     }
 }
