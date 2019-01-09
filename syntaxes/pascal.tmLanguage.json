@@ -57,8 +57,13 @@
 					"end": "\\*\\)"
 				},
 				{
+					"name": "comment.block.pascal",
+					"begin": "\\{",
+					"end": "\\}"
+				},
+				{
 					"name": "comment.line.pascal",
-					"match": "\\{.*\\}"
+					"match": "//.*$"
 				}
 			]
 		},
