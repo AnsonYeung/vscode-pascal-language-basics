@@ -5,7 +5,11 @@
     "version": "0.0.1",
     "publisher": "AnsonYeung",
     "license": "MIT",
-    "repository": "https://github.com/AnsonYeung/vscode-pascal-language-basics",
+    "icon": "images/Pascal.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AnsonYeung/vscode-pascal-language-basics"
+    },
     "engines": {
         "vscode": "^1.30.0"
     },
