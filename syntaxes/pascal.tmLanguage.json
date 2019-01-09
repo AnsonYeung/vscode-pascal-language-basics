@@ -363,19 +363,22 @@
 				},
 				{
 					"name": "meta.parameter.pascal",
-					"match": "(?i)\\b([_a-z][0-9_a-z]*)([^\\);,]*)[;,]",
+					"match": "(?i)\\b(const|var)?\\s*([_a-z][0-9_a-z]*)([^\\);,]*)[;,]",
 					"captures": {
 						"1": {
-							"name": "variable.parameter.pascal"
+							"name": "keyword.control.pascal"
 						},
 						"2": {
+							"name": "variable.parameter.pascal"
+						},
+						"3": {
 							"patterns": [
 								{
 									"include": "#comment"
 								},
 								{
 									"name": "meta.type.pascal",
-									"match": "(?i)\\:(\\s*([_a-z][0-9_a-z]*))+",
+									"match": "(?i)\\:(\\s*[_a-z][0-9_a-z]*)+",
 									"captures": {
 										"0": {
 											"patterns": [
@@ -412,21 +415,24 @@
 				},
 				{
 					"name": "meta.parameter.pascal",
-					"match": "(?i)\\b([_a-z][0-9_a-z]*)([^\\);,]*)",
+					"match": "(?i)\\b(const|var)?\\s*([_a-z][0-9_a-z]*)([^\\);,]*)",
 					"captures": {
 						"1": {
-							"name": "variable.parameter.pascal"
+							"name": "keyword.control.pascal"
 						},
 						"2": {
+							"name": "variable.parameter.pascal"
+						},
+						"3": {
 							"patterns": [
 								{
 									"include": "#comment"
 								},
 								{
 									"name": "meta.type.pascal",
-									"match": "(?i)\\:(\\s*([_a-z][0-9_a-z]*))+",
+									"match": "(?i)\\:(\\s*[_a-z][0-9_a-z]*)+",
 									"captures": {
-										"1": {
+										"0": {
 											"patterns": [
 												{
 													"include": "#keywords"
@@ -490,13 +496,13 @@
 		},
 		"statement-compound": {
 			"name": "meta.section",
-			"begin": "(?i)(begin)",
+			"begin": "(?i)\\b(begin|case)\\b",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.control.pascal"
 				}
 			},
-			"end": "(?i:)(end)",
+			"end": "(?i)\\b(end)\\b",
 			"endCaptures": {
 				"1": {
 					"name": "keyword.control.pascal"
@@ -534,8 +540,8 @@
 			"patterns": [
 				{
 					"name": "keyword.control.pascal",
-					"match": "(?i)\\b(break|case|continue|do|downto|else|for|goto|if|repeat|then|until|while|with)\\b",
-					"// already highlighted": "asm|begin|end"
+					"match": "(?i)\\b(break|continue|do|downto|else|for|goto|if|repeat|then|until|while|with)\\b",
+					"// already highlighted": "asm|begin|case|end"
 				},
 				{
 					"name": "keyword.pascal",

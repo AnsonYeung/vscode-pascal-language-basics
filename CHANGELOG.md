@@ -11,3 +11,6 @@ Updated package.json
 
 ## 0.0.4
 Fix bug related to capital letters
+
+## 0.0.5
+Fix bug related to function parameter
