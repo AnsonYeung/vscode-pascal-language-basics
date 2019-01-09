@@ -2,7 +2,7 @@
     "name": "pascal-language-basics",
     "displayName": "Pascal Language Basics",
     "description": "Provides syntax highlighting in pascal language",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "publisher": "AnsonYeung",
     "license": "SEE LICENSE AT LICENSE",
     "icon": "images/Pascal.png",
