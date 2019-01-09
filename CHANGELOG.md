@@ -8,3 +8,6 @@ Enlarge icon
 
 ## 0.0.3
 Updated package.json
+
+## 0.0.4
+Fix bug related to capital letters
