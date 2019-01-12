@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.1.0
+Add basic class support
+
 ## 0.0.6
 Fix the broken program image and fix comment problem
 

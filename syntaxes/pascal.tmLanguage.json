@@ -180,7 +180,7 @@
 		},
 		"function-declaration": {
 			"name": "meta.function.pascal",
-			"begin": "(?i)\\b(procedure|function)\\b",
+			"begin": "(?i)\\b(constructor|destructor|procedure|function)\\b",
 			"beginCaptures": {
 				"0": {
 					"name": "storage.type.pascal"
@@ -190,6 +190,14 @@
 			"patterns": [
 				{
 					"include": "#comment"
+				},
+				{
+					"match": "(?i)([_a-z][0-9_a-z]*)\\s*\\.",
+					"captures": {
+						"1": {
+							"name": "entity.name.type.pascal"
+						}
+					}
 				},
 				{
 					"name": "entity.name.function.pascal",
@@ -254,24 +262,28 @@
 				},
 				{
 					"name": "meta.type.alias.pascal",
-					"match": "(?i)\\b([_a-z][0-9_a-z]*)\\s*=((?:\\s*[_a-z][0-9_a-z]*)+)",
-					"captures": {
+					"begin": "(?i)\\b([_a-z][0-9_a-z]*)\\s*=",
+					"beginCaptures": {
 						"1": {
 							"name": "entity.name.type.pascal"
-						},
-						"2": {
-							"name": "entity.name.type.pascal",
-							"patterns": [
-								{
-									"include": "#keywords"
-								},
-								{
-									"name": "entity.name.type.pascal",
-									"match": "(?i)\\b([_a-z][0-9_a-z]*)\\b"
-								}
-							]
 						}
-					}
+					},
+					"end": ";",
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"include": "#class-declaration"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"name": "entity.name.type.pascal",
+							"match": "(?i)\\b([_a-z][0-9_a-z]*)\\b"
+						}
+					]
 				}
 			]
 		},
@@ -465,6 +477,103 @@
 											]
 										}
 									}
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		"class-declaration": {
+			"begin": "(?i)\\b(class)\\b(?:\\s*\\((.*?)\\))?",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.pascal"
+				},
+				"2": {
+					"name": "entity.name.type.pascal"
+				}
+			},
+			"end": "(?i)\\b(end)\\b",
+			"endCaptures": {
+				"1": {
+					"name": "keyword.control.pascal"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"name": "keyword.control.pascal",
+					"match": "(?i)(private|public|protected|published)"
+				},
+				{
+					"include": "#function-declaration"
+				},
+				{
+					"include": "#property"
+				},
+				{
+					"include": "#declaration"
+				}
+			]
+		},
+		"property": {
+			"name": "meta.property.pascal",
+			"begin": "(?i)\\b(property)\\b",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.pacal"
+				}
+			},
+			"end": ";",
+			"patterns": [
+				{
+					"match": "(?i)\\b([_a-z][0-9_a-z]*)\\s*:\\s*([^;]*)",
+					"captures": {
+						"1": {
+							"name": "variable.other.pascal"
+						},
+						"2": {
+							"patterns": [
+								{
+									"match": "(?i)\\b(read|write|stored)\\s+([_a-z][0-9_a-z]*)\\b",
+									"captures": {
+										"1": {
+											"name": "keyword.pascal"
+										},
+										"2": {
+											"patterns": [
+												{
+													"include": "#keywords"
+												},
+												{
+													"name": "entity.name.function.pascal",
+													"match": ".*"
+												}
+											]
+										}
+									}
+								},
+								{
+									"match": "(?i)\\b(default)\\s+(((?!\\b(?:read|write|stored|;)\\b).)*)",
+									"captures": {
+										"1": {
+											"name": "keyword.pascal"
+										},
+										"2": {
+											"patterns": [
+												{
+													"include": "#expression"
+												}
+											]
+										}
+									}
+								},
+								{
+									"name": "entity.name.class.pascal",
+									"match": "(?i)\\b([_a-z][0-9_a-z]*)\\b"
 								}
 							]
 						}
