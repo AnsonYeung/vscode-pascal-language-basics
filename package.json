@@ -4,7 +4,7 @@
     "description": "Provides syntax highlighting in pascal language",
     "version": "0.1.0",
     "publisher": "AnsonYeung",
-    "license": "SEE LICENSE AT LICENSE",
+    "license": "MIT",
     "icon": "images/Pascal.png",
     "repository": {
         "type": "git",
@@ -45,5 +45,11 @@
                 }
             }
         ]
+    },
+    "scripts": {
+        "prepare": "js-yaml syntaxes/pascal.tmLanguage.yaml > syntaxes/pascal.tmLanguage.json"
+    },
+    "devDependencies": {
+        "js-yaml": "^3.12.1"
     }
 }
