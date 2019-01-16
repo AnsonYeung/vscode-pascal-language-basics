@@ -1,6 +1,6 @@
 .vscode/**
+images/Pascal.xcf
+syntaxes/pascal.tmLanguage.yaml
 .gitignore
 vsc-extension-quickstart.md
-images/Pascal.xcf
 CHANGELOG.md
-syntaxes/pascal.tmLanguage.yaml
