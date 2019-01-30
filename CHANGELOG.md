@@ -7,7 +7,7 @@ Added fixed array support
 Added CHANGELOG.md
 
 ## 0.1.1
-\+ Added function modifier support
+\+ Added function modifier support  
 \- Removed CHANGELOG.md
 
 ## 0.1.0
