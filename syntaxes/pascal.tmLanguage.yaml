@@ -77,13 +77,13 @@ repository:
                 match: '(?i)([_a-z][0-9_a-z]*)'
     interface:
         name: meta.interface.pascal
-        begin: '(?i)\b(interface)\b'
+        begin: '(?i)(?=\b(interface)\b)'
         beginCaptures:
-            '0':
+            '1':
                 name: keyword.control.pascal
-        end: '(?i)\b(implementation)\b'
+        end: '(?i)(?=\b(implementation)\b)'
         endCaptures:
-            '0':
+            '1':
                 name: keyword.control.pascal
         patterns:
             -
@@ -126,7 +126,7 @@ repository:
         name: meta.function.pascal
         begin: '(?i)\b(constructor|destructor|procedure|function)\b'
         beginCaptures:
-            '0':
+            '1':
                 name: storage.type.pascal
         end: ;
         patterns:
@@ -143,16 +143,11 @@ repository:
             -
                 include: '#parameter-list'
             -
-                name: meta.type.pascal
-                match: '(?i)\:(\s*([_a-z][0-9_a-z]*))+'
-                captures:
-                    '0':
-                        patterns:
-                            -
-                                include: '#keywords'
-                            -
-                                name: entity.name.type.pascal
-                                match: '(?i)\b([_a-z][0-9_a-z]*)\b'
+                begin: ':'
+                end: '(?=;)'
+                patterns:
+                    -
+                        include: '#type'
     function-body:
         name: meta.body.pascal
         begin: '(?i)\b(begin)\b'
@@ -206,21 +201,18 @@ repository:
                 match: '(?i)\btype\b'
             -
                 name: meta.type.alias.pascal
-                begin: '(?i)\b([_a-z][0-9_a-z]*)\s*='
+                begin: '(?i)\b([_a-z][0-9_a-z]*)\s*(?==)'
                 beginCaptures:
                     '1':
                         name: entity.name.type.pascal
                 end: ;
                 patterns:
                     -
-                        include: '#comment'
-                    -
-                        include: '#class-declaration'
-                    -
-                        include: '#keywords'
-                    -
-                        name: entity.name.type.pascal
-                        match: '(?i)\b([_a-z][0-9_a-z]*)\b'
+                        begin: '='
+                        end: '(?=;)'
+                        patterns:
+                            -
+                                include: '#type'
     declaration:
         patterns:
             -
@@ -234,22 +226,16 @@ repository:
                 beginCaptures:
                     '1':
                         name: variable.other.pascal
-                end: '[;,]'
+                end: '(;|,|(?=\)))'
                 patterns:
                     -
                         include: '#comment'
                     -
-                        name: meta.type.pascal
-                        match: '(?i)\:((?:\s*[_a-z][0-9_a-z]*)+)'
-                        captures:
-                            '1':
-                                name: entity.name.type.pascal
-                                patterns:
-                                    -
-                                        include: '#keywords'
-                                    -
-                                        name: entity.name.type.pascal
-                                        match: '(?i)\b([_a-z][0-9_a-z]*)\b'
+                        begin: ':'
+                        end: '(?=[;=)])'
+                        patterns:
+                            -
+                                include: '#type'
                     -
                         name: meta.expression.pascal
                         match: '=([^;\)]*)'
@@ -268,71 +254,24 @@ repository:
             -
                 include: '#comment'
             -
-                name: meta.parameter.pascal
-                match: '(?i)\b(const|var)?\s*([_a-z][0-9_a-z]*)([^\);,]*)[;,]'
-                captures:
-                    '1':
-                        name: keyword.control.pascal
-                    '2':
-                        name: variable.parameter.pascal
-                    '3':
-                        patterns:
-                            -
-                                include: '#comment'
-                            -
-                                name: meta.type.pascal
-                                match: '(?i)\:(\s*[_a-z][0-9_a-z]*)+'
-                                captures:
-                                    '0':
-                                        patterns:
-                                            -
-                                                include: '#keywords'
-                                            -
-                                                name: entity.name.type.pascal
-                                                match: '(?i)\b([_a-z][0-9_a-z]*)\b'
-                            -
-                                name: meta.expression.pascal
-                                match: '=([^;\)]*)'
-                                captures:
-                                    '1':
-                                        patterns:
-                                            -
-                                                include: '#comment'
-                                            -
-                                                include: '#expression'
+                include: '#declaration'
+    type:
+        patterns:
             -
-                name: meta.parameter.pascal
-                match: '(?i)\b(const|var)?\s*([_a-z][0-9_a-z]*)([^\);,]*)'
-                captures:
-                    '1':
-                        name: keyword.control.pascal
-                    '2':
-                        name: variable.parameter.pascal
-                    '3':
-                        patterns:
-                            -
-                                include: '#comment'
-                            -
-                                name: meta.type.pascal
-                                match: '(?i)\:(\s*[_a-z][0-9_a-z]*)+'
-                                captures:
-                                    '0':
-                                        patterns:
-                                            -
-                                                include: '#keywords'
-                                            -
-                                                name: entity.name.type.pascal
-                                                match: '(?i)\b([_a-z][0-9_a-z]*)\b'
-                            -
-                                name: meta.expression.pascal
-                                match: '=([^;\)]*)'
-                                captures:
-                                    '1':
-                                        patterns:
-                                            -
-                                                include: '#comment'
-                                            -
-                                                include: '#expression'
+                include: '#comment'
+            -
+                include: '#class-declaration'
+            -
+                include: '#keywords'
+            -
+                begin: '\['
+                end: '\]'
+                patterns:
+                    -
+                        include: '#expression'
+            -
+                name: 'entity.name.type.pascal'
+                match: '(?i)\b[_a-z][0-9_a-z]*\b'
     class-declaration:
         begin: '(?i)\b(class)\b(?:\s*\((.*?)\))?'
         beginCaptures:
