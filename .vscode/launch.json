@@ -9,10 +9,12 @@
             "name": "Extension",
             "type": "extensionHost",
             "request": "launch",
+            "preLaunchTask": "npm: prepare",
             "runtimeExecutable": "${execPath}",
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}"
-            ]
+            ],
+            "postDebugTask": "npm: clean"
         }
     ]
 }

@@ -47,9 +47,12 @@
         ]
     },
     "scripts": {
-        "prepare": "js-yaml syntaxes/pascal.tmLanguage.yaml > syntaxes/pascal.tmLanguage.json"
+        "prepare": "js-yaml syntaxes/pascal.tmLanguage.yaml > syntaxes/pascal.tmLanguage.json",
+        "clean": "rm syntaxes/pascal.tmLanguage.json",
+        "patch": "npm run prepare && vsce publish patch && npm run clean"
     },
     "devDependencies": {
-        "js-yaml": "^3.12.1"
+        "js-yaml": "^3.12.1",
+        "vsce": "^1.55.0"
     }
 }

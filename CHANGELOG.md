@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.3
+Added fixed array support
+
+## 0.1.2
+Added CHANGELOG.md
+
+## 0.1.1
+\+ Added function modifier support
+\- Removed CHANGELOG.md
+
 ## 0.1.0
 Add basic class support
 
