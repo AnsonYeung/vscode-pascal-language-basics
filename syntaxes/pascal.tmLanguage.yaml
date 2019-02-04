@@ -10,6 +10,8 @@ patterns:
     -
         include: '#interface'
     -
+        include: '#implementation'
+    -
         include: '#uses'
     -
         include: '#label'
@@ -77,7 +79,7 @@ repository:
                 match: '(?i)([_a-z][0-9_a-z]*)'
     interface:
         name: meta.interface.pascal
-        begin: '(?i)(?=\b(interface)\b)'
+        begin: '(?i)\b(interface)\b'
         beginCaptures:
             '1':
                 name: keyword.control.pascal
@@ -94,6 +96,29 @@ repository:
                 include: '#label'
             -
                 include: '#function-declaration'
+            -
+                include: '#declaration'
+    implementation:
+        name: meta.implementation.pascal
+        begin: '(?i)\b(implementation)\b'
+        beginCaptures:
+            '1':
+                name: keyword.control.pascal
+        end: '(?i)(?=\b(end)\b)'
+        endCaptures:
+            '1':
+                name: keyword.control.pascal
+        patterns:
+            -
+                include: '#comment'
+            -
+                include: '#uses'
+            -
+                include: '#label'
+            -
+                include: '#function-declaration'
+            -
+                include: '#function-body'
             -
                 include: '#declaration'
     uses:
