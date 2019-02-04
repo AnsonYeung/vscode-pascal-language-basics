@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.1.4
+Fixed a bug related to unit
+
 ## 0.1.3
 Added fixed array support
 
