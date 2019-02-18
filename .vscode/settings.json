@@ -1,3 +1,9 @@
 {
-	"git.autofetch": true
+	"git.autofetch": true,
+	"workbench.iconTheme": "vscode-icons",
+	"[yaml]": {
+		"editor.detectIndentation": false,
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4
+	}
 }
