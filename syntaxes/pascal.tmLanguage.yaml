@@ -12,6 +12,8 @@ patterns:
     -
         include: '#implementation'
     -
+        include: '#unit-main'
+    -
         include: '#uses'
     -
         include: '#label'
@@ -104,7 +106,7 @@ repository:
         beginCaptures:
             '1':
                 name: keyword.control.pascal
-        end: '(?i)(?=\b(end)\b)'
+        end: '(?i)(?=\b(initialization|end)\b)'
         endCaptures:
             '1':
                 name: keyword.control.pascal
@@ -121,6 +123,21 @@ repository:
                 include: '#function-body'
             -
                 include: '#declaration'
+    unit-main:
+        begin: '(?i)\b(initialization)\b'
+        beginCaptures:
+            '1':
+                name: keyword.control.pascal
+        end: '(?i)\b(end)\s*.'
+        endCaptures:
+            '1':
+                name: keyword.control.pascal
+        patterns:
+            -
+                name: keyword.control.pascal
+                match: '(?i)\b(finalization)\b'
+            -
+                include: '#statement'
     uses:
         name: meta.uses.pascal
         begin: '(?i)\b(uses)\b'
@@ -153,7 +170,7 @@ repository:
         beginCaptures:
             '1':
                 name: storage.type.pascal
-        end: ;
+        end: '(?=;)'
         patterns:
             -
                 include: '#comment'
@@ -286,6 +303,8 @@ repository:
                 include: '#comment'
             -
                 include: '#class-declaration'
+            -
+                include: '#function-declaration'
             -
                 include: '#keywords'
             -

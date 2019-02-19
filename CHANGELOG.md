@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.5
+\+ Formating for unit initialization and finalization
+\+ Formating function type declaration
+
 ## 0.1.4
 Fixed a bug related to unit
 
