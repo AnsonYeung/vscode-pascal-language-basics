@@ -53,6 +53,6 @@
     },
     "devDependencies": {
         "js-yaml": "^3.12.1",
-        "vsce": "^1.55.0"
+        "vsce": "^1.57.1"
     }
 }
