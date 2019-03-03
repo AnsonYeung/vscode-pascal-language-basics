@@ -1,24 +1,29 @@
 # Change Log
 
+## 0.1.6
+Fixes comments in unit initialize and finalize  
+\+ Records  
+\+ `$00ff`  
+
 ## 0.1.5
-\+ Formating for unit initialization and finalization
-\+ Formating function type declaration
+\+ Unit initialization and finalization  
+\+ Function type declaration  
 
 ## 0.1.4
 Fixed a bug related to unit
 
 ## 0.1.3
-Added fixed array support
+\+ Formatting for fixed array
 
 ## 0.1.2
-Added CHANGELOG.md
+\+ Add `CHANGELOG.md` back
 
 ## 0.1.1
-\+ Added function modifier support  
-\- Removed CHANGELOG.md
+\+ Function modifier  
+\- Removed `CHANGELOG.md`
 
 ## 0.1.0
-Add basic class support
+\+ Classes
 
 ## 0.0.6
 Fix the broken program image and fix comment problem

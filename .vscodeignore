@@ -3,3 +3,4 @@ images/Pascal.xcf
 syntaxes/pascal.tmLanguage.yaml
 .gitignore
 vsc-extension-quickstart.md
+pascal-language-basics.code-workspace

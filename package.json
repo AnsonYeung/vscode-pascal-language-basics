@@ -30,7 +30,7 @@
                 ],
                 "extensions": [
                     ".pas",
-                    ".pp"
+					".pp"
                 ],
                 "configuration": "./language-configuration.json"
             }
@@ -48,7 +48,7 @@
     },
     "scripts": {
         "prepare": "js-yaml syntaxes/pascal.tmLanguage.yaml > syntaxes/pascal.tmLanguage.json",
-        "clean": "rm syntaxes/pascal.tmLanguage.json",
+        "clean": "rm -f syntaxes/pascal.tmLanguage.json",
         "patch": "npm run prepare && vsce publish patch && npm run clean"
     },
     "devDependencies": {
