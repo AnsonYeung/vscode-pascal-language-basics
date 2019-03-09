@@ -386,7 +386,7 @@ repository:
             -
                 include: '#comment'
             -
-                name: storage.type.method
+                name: storage.type.method.pascal
                 match: '(?i)(private|public|protected|published)'
             -
                 include: '#function-declaration'
@@ -496,7 +496,7 @@ repository:
                 match: '(?i)\b(break|continue|do|downto|else|for|goto|if|repeat|then|until|while|with)\b'
                 # formatted asm|begin|case|end
             -
-                name: constant.language
+                name: constant.language.pascal
                 match: '(?i)\b(true|false)'
             -
                 name: keyword.pascal
