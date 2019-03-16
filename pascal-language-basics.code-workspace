@@ -11,6 +11,10 @@
 			"editor.detectIndentation": false,
 			"editor.insertSpaces": true,
 			"editor.tabSize": 4
+		},
+		"[markdown]":{
+			"editor.wordWrap": "wordWrapColumn",
+			"editor.wordWrapColumn": 80,
 		}
 	}
 }
