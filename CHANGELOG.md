@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.1.8
+Fixes publishing issue on 0.1.7
+
 ## 0.1 7
 Fixes variable declaration starting in end would destroy formatting
 
