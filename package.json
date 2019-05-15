@@ -52,7 +52,7 @@
         "patch": "npm run prepare && vsce publish patch && npm run clean"
     },
     "devDependencies": {
-        "js-yaml": "^3.12.1",
+        "js-yaml": "^3.13.1",
         "vsce": "^1.61.0"
     }
 }
