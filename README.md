@@ -13,6 +13,6 @@ No requirements
 No settings
 
 ## Known Issues
-* Some line breaks in code may break syntax highlighting due to the limitation of `TextMate` used by `Visual Studio Code`. If you believe the correct formatting should be applied in your case, please file an issue at my repository.  
+* Some line breaks in code may break syntax highlighting due to the limitation of _TextMate_ used by _Visual Studio Code_. If you believe the correct formatting should be applied in your case, please file an issue at my repository.  
 
 ### [Release Notes](CHANGELOG.md)
