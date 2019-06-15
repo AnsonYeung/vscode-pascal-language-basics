@@ -27,7 +27,7 @@ patterns:
         include: '#asm'
     -
         name: meta.program.end.pascal
-        match: '(?i)\b(end)\s*.'
+        match: '(?i)\b(end)\s*\.'
         captures:
             '1':
                 name: keyword.control.pascal
@@ -136,7 +136,7 @@ repository:
         beginCaptures:
             '1':
                 name: keyword.control.pascal
-        end: '(?i)\b(end)\s*.'
+        end: '(?i)\b(end)\s*\.'
         endCaptures:
             '1':
                 name: keyword.control.pascal
@@ -237,7 +237,7 @@ repository:
         beginCaptures:
             '1':
                 name: keyword.control.pascal
-        end: '(?i)\b(end)([^;]*);'
+        end: '(?i)\b(end)\b([^;]*);'
         endCaptures:
             '1':
                 name: keyword.control.pascal
@@ -497,7 +497,7 @@ repository:
                 # formatted asm|begin|case|end
             -
                 name: constant.language.pascal
-                match: '(?i)\b(true|false)'
+                match: '(?i)\b(true|false)\b'
             -
                 name: keyword.pascal
                 match: '(?i)\b(absolute|and|array|const|constructor|destructor|div|file|function|implementation|in|inherited|inline|interface|label|mod|nil|not|object|of|on|operator|or|packed|procedure|program|record|reintroduce|self|set|shl|shr|then|to|type|unit|uses|var|xor|as|class|except|exports|finalization|finally|initialization|is|library|on|property|raise|threadvar|try|dispose|exit|new)\b'
