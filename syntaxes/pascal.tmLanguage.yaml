@@ -458,7 +458,7 @@ repository:
                 include: '#identifier'
     statement-compound:
         name: meta.section.pascal
-        begin: '(?i)\b(begin|case)\b'
+        begin: '(?i)\b(begin|case|try)\b'
         beginCaptures:
             '1':
                 name: keyword.control.pascal
