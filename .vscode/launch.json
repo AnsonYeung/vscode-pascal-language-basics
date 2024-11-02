@@ -13,8 +13,7 @@
             "runtimeExecutable": "${execPath}",
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}"
-            ],
-            "postDebugTask": "npm: clean"
+            ]
         }
     ]
 }
