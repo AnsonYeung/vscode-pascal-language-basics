@@ -56,7 +56,7 @@ repository:
         begin: '(?i)\b(program)\b'
         beginCaptures:
             '1':
-                name: storage.type.pascal
+                name: storage.type.program.pascal
         end: ;
         patterns:
             -
@@ -232,7 +232,7 @@ repository:
             -
                 include: '#expression'
     asm:
-        contentName: meta.embedded.asm
+        contentName: meta.embedded.block.asm
         begin: '(?i)(asm)'
         beginCaptures:
             '1':
@@ -245,7 +245,11 @@ repository:
                 patterns:
                     -
                         include: '#strings'
-        patterns: []
+        patterns:
+            -
+                include: 'source.asm.x86_64'
+            -
+                include: 'source.arm'
     type-declaration:
         patterns:
             -

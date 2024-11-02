@@ -41,7 +41,7 @@
                 "scopeName": "source.pascal",
                 "path": "./syntaxes/pascal.tmLanguage.json",
                 "embeddedLanguages": {
-                    "meta.embedded.asm": "source.asm"
+                    "meta.embedded.block.asm": "assembly"
                 }
             }
         ]
@@ -53,6 +53,6 @@
     },
     "devDependencies": {
         "js-yaml": "^3.13.1",
-        "vsce": "^2.7.0"
+        "vsce": "^1.97.0"
     }
 }
