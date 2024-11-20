@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.11
+Changes token for some keywords
+\+ `0xdeadbeef`
+
 ## 0.1.10
 Fixes try block
 
