@@ -332,6 +332,8 @@ repository:
                     -
                         include: '#expression'
             -
+                include: '#expression'
+            -
                 name: entity.name.type.pascal
                 match: '(?i)\b[_a-z][0-9_a-z]*\b'
     record-declaration:
@@ -472,6 +474,9 @@ repository:
                 name: keyword.control.pascal
         patterns:
             -
+                name: keyword.control.pascal
+                match: '(?i)\b(of)\b'
+            -
                 include: '#comment'
             -
                 include: '#asm'
@@ -497,14 +502,14 @@ repository:
                 match: '(?i)\b(string)\b'
             -
                 name: keyword.control.pascal
-                match: '(?i)\b(break|continue|do|downto|else|for|goto|if|of|repeat|then|until|while|with)\b'
+                match: '(?i)\b(break|continue|do|downto|else|for|goto|if|repeat|then|until|while|with)\b'
                 # formatted asm|begin|case|end
             -
                 name: constant.language.pascal
                 match: '(?i)\b(true|false)\b'
             -
                 name: keyword.pascal
-                match: '(?i)\b(absolute|and|array|const|constructor|destructor|div|file|function|implementation|in|inherited|inline|interface|label|mod|nil|not|object|on|operator|or|packed|procedure|program|record|reintroduce|self|set|shl|shr|then|to|type|unit|uses|var|xor|as|class|except|exports|finalization|finally|initialization|is|library|on|property|raise|threadvar|try|dispose|exit|new)\b'
+                match: '(?i)\b(absolute|and|array|const|constructor|destructor|div|file|function|implementation|in|inherited|inline|interface|label|mod|nil|not|object|of|on|operator|or|packed|procedure|program|record|reintroduce|self|set|shl|shr|then|to|type|unit|uses|var|xor|as|class|except|exports|finalization|finally|initialization|is|library|on|property|raise|threadvar|try|dispose|exit|new)\b'
     strings:
         name: string.quoted.pascal
         begin: "'"
