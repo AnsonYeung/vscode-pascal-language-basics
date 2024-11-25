@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.12
+Fixes `of` keyword highlighting
+Fixes highlighting in range type
+
 ## 0.1.11
 Changes token for some keywords
 \+ `0xdeadbeef`
