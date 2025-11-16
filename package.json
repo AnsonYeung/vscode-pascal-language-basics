@@ -53,6 +53,6 @@
     },
     "devDependencies": {
         "@vscode/vsce": "^3.2.1",
-        "js-yaml": "^3.13.1"
+        "js-yaml": "^4.1.1"
     }
 }
